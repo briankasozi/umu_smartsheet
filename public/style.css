@@ -1,0 +1,41 @@
+/* public/style.css - Basic styling for TagDev2.0 */
+h1, h2 { color: #2c3e50; }
+body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; }
+.sidebar {
+	width: 200px;
+	background: #34495e;
+	color: #fff;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 30px 10px 10px 10px;
+}
+.sidebar h2 { color: #fff; }
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar ul li { margin: 20px 0; }
+.sidebar ul li a { color: #ecf0f1; text-decoration: none; font-weight: bold; }
+.sidebar ul li a:hover { color: #f39c12; }
+.main-content {
+	margin-left: 220px;
+	padding: 30px 20px;
+}
+table { border-collapse: collapse; width: 100%; background: #fff; }
+th, td { padding: 8px 12px; border: 1px solid #ccc; }
+th { background: #eaeaea; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+form { background: #fff; padding: 20px; border-radius: 5px; max-width: 400px; }
+input, textarea, select, button { margin: 8px 0; padding: 8px; width: 100%; box-sizing: border-box; }
+button { background: #2980b9; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+button:hover { background: #1c5980; }
+h1, h2 { color: #2c3e50; }
+table { border-collapse: collapse; width: 100%; background: #fff; }
+th, td { padding: 8px 12px; border: 1px solid #ccc; }
+th { background: #eaeaea; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+form { background: #fff; padding: 20px; border-radius: 5px; max-width: 400px; }
+input, textarea, select, button { margin: 8px 0; padding: 8px; width: 100%; box-sizing: border-box; }
+button { background: #2980b9; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+button:hover { background: #1c5980; }

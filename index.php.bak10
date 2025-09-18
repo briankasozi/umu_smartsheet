@@ -1,0 +1,91 @@
+<?php
+// Previous PHP code remains the same...
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Previous head content remains the same... -->
+</head>
+<body class="bg-gray-50">
+    <!-- Sidebars remain the same... -->
+
+    <!-- Main Content -->
+    <div id="mainContent" class="pl-[31rem] pr-4 pt-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Welcome Section -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Welcome to TagDev2.0</h1>
+                        <p class="mt-2 text-lg text-gray-600">Project Management Dashboard</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <button class="bg-[#1a73e8] text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                            New Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-8">
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <div class="text-blue-600 text-sm font-medium uppercase tracking-wide">Active Projects</div>
+                        <div class="mt-2 flex justify-between items-end">
+                            <div class="text-2xl font-bold text-gray-900"><?= count($allProjects) ?></div>
+                            <div class="text-blue-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <div class="text-green-600 text-sm font-medium uppercase tracking-wide">Completed Tasks</div>
+                        <div class="mt-2 flex justify-between items-end">
+                            <div class="text-2xl font-bold text-gray-900">
+                                <?php
+                                $completedTasks = array_filter($tasks ?? [], function($task) {
+                                    return $task['status'] === 'Completed';
+                                });
+                                echo count($completedTasks);
+                                ?>
+                            </div>
+                            <div class="text-green-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 rounded-lg p-6">
+                        <div class="text-purple-600 text-sm font-medium uppercase tracking-wide">Team Members</div>
+                        <div class="mt-2 flex justify-between items-end">
+                            <div class="text-2xl font-bold text-gray-900">
+                                <?php
+                                $stmt = $pdo->query('SELECT COUNT(*) FROM users');
+                                echo $stmt->fetchColumn();
+                                ?>
+                            </div>
+                            <div class="text-purple-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rest of your content... -->
+            <?php if (!empty($tasks)): ?>
+                <!-- Your existing tasks table... -->
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <!-- Previous scripts remain the same... -->
+</body>
+</html>
